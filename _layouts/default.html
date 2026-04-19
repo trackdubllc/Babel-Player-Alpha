@@ -2,13 +2,9 @@
 <html lang="{{ site.lang | default: 'en-US' }}">
   <head>
     <meta charset="UTF-8">
-
     {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0a1628">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
   </head>
@@ -19,49 +15,33 @@
     {% assign releases_url = repo_url | append: '/releases/latest' %}
     {% assign issues_url = repo_url | append: '/issues' %}
 
-    <header class="page-header" role="banner">
-      <div class="page-header__inner">
-        <p class="page-header__eyebrow">Local-first AI dubbing for Windows</p>
-        <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-        <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
-
-        <div class="page-header__actions">
-          <a href="{{ releases_url }}" class="btn btn--primary">Download latest release</a>
-          <a href="{{ repo_url }}" class="btn btn--ghost">View source</a>
-          {% for link in site.nav_links %}
-            <a href="{{ link.url }}" class="btn btn--ghost">{{ link.title }}</a>
-          {% endfor %}
-        </div>
+    <header class="site-topbar" role="banner">
+      <div class="site-topbar__inner">
+        <a class="site-topbar__brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+        <nav class="site-topbar__nav" aria-label="Primary">
+          <a href="#workflow">Workflow</a>
+          <a href="#why">Features</a>
+          <a href="#download">Get started</a>
+          <a class="site-topbar__github" href="{{ repo_url }}">GitHub</a>
+        </nav>
       </div>
     </header>
 
-    <main id="content" class="main-content" role="main">
+    <main id="content" class="main-content main-content--landing" role="main">
       {{ content }}
-
-      <footer class="site-footer">
-        <div class="site-footer__grid">
-          <p class="site-footer__owner">
-            <a href="{{ repo_url }}">{{ site.title }}</a>
-            is an open-source desktop dubbing workstation in active development.
-          </p>
-
-          <p class="site-footer__links">
-            <a href="{{ releases_url }}">Releases</a>
-            <span class="site-footer__dot" aria-hidden="true">·</span>
-            <a href="{{ issues_url }}">Issues</a>
-            <span class="site-footer__dot" aria-hidden="true">·</span>
-            <a href="https://github.com/sponsors/mta-babel">GitHub Sponsors</a>
-            <span class="site-footer__dot" aria-hidden="true">·</span>
-            <a href="https://ko-fi.com/babel_player">Ko-fi</a>
-            <span class="site-footer__dot" aria-hidden="true">·</span>
-            <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
-          </p>
-        </div>
-
-        <p class="site-footer__credits">
-          Hosted on <a href="https://pages.github.com">GitHub Pages</a>.
-        </p>
-      </footer>
     </main>
+
+    <footer class="site-footer site-footer--minimal">
+      <div class="site-footer__grid">
+        <p class="site-footer__owner">
+          Built for local-first dubbing workflows. Source available on GitHub.
+        </p>
+        <p class="site-footer__links">
+          <a href="{{ repo_url }}">GitHub</a>
+          <span class="site-footer__dot" aria-hidden="true">·</span>
+          <a href="{{ repo_url }}/blob/main/THIRD_PARTY_LICENSES.md">Licenses</a>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
