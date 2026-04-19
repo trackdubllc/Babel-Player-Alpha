@@ -1,209 +1,219 @@
 ---
 layout: default
 title: Babel Player
-description: Local-first AI dubbing for Windows — transcribe, translate, assign voices, preview in context, and iterate without rerunning the whole file.
+description: Local-first AI dubbing for Windows — transcribe, translate, assign voices, preview in context, and refine staged output without hiding the pipeline.
 body_class: bp-home
 ---
 
-<nav class="section-nav" aria-label="Page sections">
-  <a href="#workflow">Workflow</a>
-  <a href="#screens">Screens</a>
-  <a href="#why">Why Babel Player</a>
-  <a href="#requirements">Requirements</a>
-  <a href="#download">Download</a>
-</nav>
+<section class="hero-grid">
+  <div class="hero-copy">
+    <p class="hero-kicker">Local-first AI video dubbing</p>
 
-<section class="hero-intro">
-  <p class="hero-kicker">Desktop-first · local-first · segment-based</p>
-  <p class="lead">
-    Babel Player is a Windows dubbing workstation for local media. Load a file, generate timed transcripts, translate dialogue, assign voices to speakers, preview changes in context, and regenerate only the lines you changed.
-  </p>
-  <div class="hero-actions">
-    <a class="btn btn--primary" href="https://github.com/mta-babel/Babel-Player/releases/latest">Download latest release</a>
-    <a class="btn btn--ghost" href="https://github.com/mta-babel/Babel-Player">View source on GitHub</a>
+    <h1 class="hero-title">
+      Turn video dialogue into editable dubbed speech without hiding the pipeline.
+    </h1>
+
+    <p class="lead">
+      Babel Player is a desktop workstation for loading local media, generating timed transcripts, translating dialogue, assigning voices, previewing dubbed speech in context, and refining the result before export.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn--primary" href="https://github.com/mta-babel/Babel-Player/releases/latest">Download / releases</a>
+      <a class="btn btn--ghost" href="https://github.com/mta-babel/Babel-Player">View source</a>
+    </div>
+
+    <p class="hero-note">
+      Experimental, open-source, Windows-first. Local inference is a major path; optional provider support depends on configuration.
+    </p>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-mock">
+      <div class="hero-mock__chrome">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="hero-mock__player">
+        <div class="hero-mock__play"></div>
+      </div>
+
+      <div class="hero-mock__wave"></div>
+
+      <div class="hero-mock__card hero-mock__card--active">
+        <strong>Speaker 1</strong>
+        <span>Original transcript → translated line → generated voice</span>
+      </div>
+
+      <div class="hero-mock__card">
+        <strong>Speaker 2</strong>
+        <span>Regenerate only changed stages</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<figure class="hero-shot hero-shot--primary">
-  <a href="https://github.com/mta-babel/Babel-Player/releases/latest">
-    <img
-      src="https://raw.githubusercontent.com/mta-babel/Babel-Player/main/Assets/preview.png"
-      alt="Babel Player main window showing the dubbing pipeline and preview"
-      width="1152"
-      height="648"
-      loading="eager"
-      decoding="async">
-  </a>
-  <figcaption>
-    Current public build. Installers and portable zips are published on the
-    <a href="https://github.com/mta-babel/Babel-Player/releases/latest">latest release page</a>.
-  </figcaption>
-</figure>
-
 <section class="trust-strip">
-  <div class="trust-pill"><strong>Local media first</strong><span>Your files stay on your machine unless you explicitly choose a cloud stage.</span></div>
-  <div class="trust-pill"><strong>Segment-based iteration</strong><span>Fix one line, one voice, or one timing issue without rerunning the whole project.</span></div>
-  <div class="trust-pill"><strong>Honest routing</strong><span>See which stages run on CPU, GPU, or cloud. No fake readiness.</span></div>
+  <div class="trust-pill">
+    <strong>Desktop-first</strong>
+    <span>No browser upload required for the core workflow.</span>
+  </div>
+  <div class="trust-pill">
+    <strong>Inspectable stages</strong>
+    <span>Transcript, translation, voices, and TTS stay visible and editable.</span>
+  </div>
+  <div class="trust-pill">
+    <strong>Hardware-aware</strong>
+    <span>Designed to use local acceleration when available.</span>
+  </div>
 </section>
 
-<h2 id="workflow">Workflow</h2>
-
-<p>
-  Babel Player is not a one-shot subtitle tool. It is built around a staged dubbing loop where each line of dialogue can be edited, regenerated, and previewed in place.
-</p>
-
-<ol class="pipeline-steps">
-  <li><strong>Open</strong> local video or audio</li>
-  <li><strong>Transcribe</strong> timed dialogue</li>
-  <li><strong>Identify speakers</strong> and assign voices</li>
-  <li><strong>Translate</strong> segment by segment</li>
-  <li><strong>Generate TTS</strong> per line or per speaker</li>
-  <li><strong>Preview</strong> against the original media</li>
-  <li><strong>Refine</strong> only what changed</li>
-</ol>
-
-<div class="status-panel">
-  <p class="status-panel__title">Current shape of the product</p>
-  <p class="status-panel__text">
-    Windows-first, actively evolving, local-first by design, with optional bring-your-own-key cloud providers for stages where you want them.
+<section class="section-block" id="workflow">
+  <p class="section-kicker">The workflow</p>
+  <h2>Built around staged refinement, not one-shot magic.</h2>
+  <p class="section-lead">
+    Dubbing quality comes from iteration. Babel Player keeps each stage visible so you can fix the source of a problem instead of rerunning a black box.
   </p>
-</div>
 
-<h2 id="screens">Interface gallery</h2>
+  <ol class="workflow-grid">
+    <li class="workflow-card">
+      <span class="workflow-card__num">01</span>
+      <h3>Ingest</h3>
+      <p>Load local media, extract audio, and prepare the project workspace.</p>
+    </li>
+    <li class="workflow-card">
+      <span class="workflow-card__num">02</span>
+      <h3>Transcript</h3>
+      <p>Generate timed dialogue segments that can be edited before downstream stages.</p>
+    </li>
+    <li class="workflow-card">
+      <span class="workflow-card__num">03</span>
+      <h3>Translate</h3>
+      <p>Create target-language dialogue while preserving segment timing and speaker context.</p>
+    </li>
+    <li class="workflow-card">
+      <span class="workflow-card__num">04</span>
+      <h3>Assign voices</h3>
+      <p>Map speakers to voices, review language/provider choices, and keep settings explicit.</p>
+    </li>
+    <li class="workflow-card">
+      <span class="workflow-card__num">05</span>
+      <h3>Generate TTS</h3>
+      <p>Render dubbed speech per segment so individual fixes do not require a full rerun.</p>
+    </li>
+    <li class="workflow-card">
+      <span class="workflow-card__num">06</span>
+      <h3>Preview &amp; refine</h3>
+      <p>Hear dubbed speech against the original video, then adjust text, timing, voice, or mix.</p>
+    </li>
+  </ol>
+</section>
 
-<figure class="hero-shot">
-  <img
-    src="https://raw.githubusercontent.com/mta-babel/Babel-Player/main/Assets/Pipeline%201.png"
-    alt="Pipeline view showing source media through transcription, vocal separation, and diarization"
-    width="1152"
-    loading="lazy"
-    decoding="async">
-  <figcaption>Early pipeline stages: ingest, transcription, separation, and diarization.</figcaption>
-</figure>
+<section class="section-block section-block--split" id="why">
+  <div class="section-copy">
+    <p class="section-kicker">Why Babel Player</p>
+    <h2>A dubbing workstation should tell the truth about its state.</h2>
+    <p class="section-lead">
+      The goal is not to dazzle you with a loading spinner. It is to preserve your work, show which stage produced which artifacts, and make local AI workflows less fiddly.
+    </p>
+  </div>
 
-<figure class="hero-shot">
-  <img
-    src="https://raw.githubusercontent.com/mta-babel/Babel-Player/main/Assets/Pipeline%202.png"
-    alt="Pipeline view showing translation, text-to-speech, and export stages"
-    width="1152"
-    loading="lazy"
-    decoding="async">
-  <figcaption>Translation and speech generation stay gated behind real upstream artifacts, not fake ready states.</figcaption>
-</figure>
+  <div class="feature-grid">
+    <article class="feature-card">
+      <h3 class="feature-card__title">Local media first</h3>
+      <p>Projects begin with files on your machine, not forced uploads.</p>
+    </article>
+    <article class="feature-card">
+      <h3 class="feature-card__title">Resumable work</h3>
+      <p>Generated artifacts are saved so reopening a project does not mean recomputing everything.</p>
+    </article>
+    <article class="feature-card">
+      <h3 class="feature-card__title">Clear provider routing</h3>
+      <p>CPU, GPU, and optional provider paths should be visible instead of guessed after the fact.</p>
+    </article>
+    <article class="feature-card">
+      <h3 class="feature-card__title">Staged refinement</h3>
+      <p>Work line by line through transcript, translation, and dubbing instead of treating the pipeline like a slot machine.</p>
+    </article>
+  </div>
+</section>
 
-<figure class="hero-shot">
-  <img
-    src="https://raw.githubusercontent.com/mta-babel/Babel-Player/main/Assets/wizard.png"
-    alt="Speaker reference wizard for multi-speaker routing and voice assignment"
-    width="1152"
-    loading="lazy"
-    decoding="async">
-  <figcaption>Speaker-aware workflow for consistent routing, assignment, and future refinement.</figcaption>
-</figure>
-
-<h2 id="why">Why Babel Player</h2>
-
-<div class="feature-grid">
-  <article class="feature-card">
-    <h3 class="feature-card__title">Local-first workflow</h3>
-    <p>Bring in local media, keep artifacts on disk, and reopen work later without starting from zero.</p>
-  </article>
-  <article class="feature-card">
-    <h3 class="feature-card__title">Segment-level regeneration</h3>
-    <p>Edit one translated line or reassign one speaker voice without blowing away the whole pipeline.</p>
-  </article>
-  <article class="feature-card">
-    <h3 class="feature-card__title">Explicit compute paths</h3>
-    <p>Each stage exposes CPU, GPU, or cloud routes clearly so the app’s state matches reality.</p>
-  </article>
-  <article class="feature-card">
-    <h3 class="feature-card__title">Managed local runtime</h3>
-    <p>The app bootstraps its own local inference environment instead of asking users to manually set up Python.</p>
-  </article>
-  <article class="feature-card">
-    <h3 class="feature-card__title">Preview in context</h3>
-    <p>Work against the real media instead of editing blind text and only hearing the result at the very end.</p>
-  </article>
-  <article class="feature-card">
-    <h3 class="feature-card__title">Optional cloud, not mandatory cloud</h3>
-    <p>Cloud providers are opt-in and BYOK. The default posture is local, inspectable, and under your control.</p>
-  </article>
-</div>
-
-<h2 id="requirements">Requirements</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>OS</strong></td>
-      <td>Windows 10 or 11</td>
-    </tr>
-    <tr>
-      <td><strong>Architecture</strong></td>
-      <td>x64 and ARM64</td>
-    </tr>
-    <tr>
-      <td><strong>GPU (optional)</strong></td>
-      <td>NVIDIA CUDA recommended for heavier local GPU paths</td>
-    </tr>
-    <tr>
-      <td><strong>VRAM</strong></td>
-      <td>Around 6 GB minimum for many GPU routes, more for larger models and cloning-oriented workflows</td>
-    </tr>
-    <tr>
-      <td><strong>Release builds</strong></td>
-      <td>Self-contained, no separate .NET runtime install</td>
-    </tr>
-    <tr>
-      <td><strong>Source builds</strong></td>
-      <td>.NET 10 SDK</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-  First-time local inference may download a managed runtime and model assets, depending on which path you choose.
-</p>
-
-<h2>Privacy and licensing</h2>
-
-<p>
-  Processing stays on your machine unless you deliberately route a stage through a cloud provider and supply your own key. There are no accounts required to use the app itself.
-</p>
-
-<p>
-  Model and voice licenses vary. If you plan to use Babel Player in commercial workflows, review the repository’s license notes and third-party model restrictions before relying on any specific provider or bundled path.
-</p>
-
-<ul>
-  <li><a href="{{ site.baseurl }}/privacy/">Privacy policy</a></li>
-  <li><a href="https://github.com/mta-babel/Babel-Player#readme">Repository README</a></li>
-  <li><a href="https://github.com/mta-babel/Babel-Player/blob/main/THIRD_PARTY_LICENSES.md">Third-party licenses</a></li>
-</ul>
-
-<h2 id="download">Get Babel Player</h2>
-
-<div class="cta-panel">
-  <p class="cta-panel__title">Ready to try it?</p>
-  <p class="cta-panel__text">
-    Grab the latest build, explore the source, or follow development on GitHub.
+<section class="section-block" id="status">
+  <p class="section-kicker">Project status</p>
+  <h2>Open-source and still evolving.</h2>
+  <p class="section-lead">
+    Babel Player is under active development. Expect rough edges, but the product direction is practical: reliable desktop workflow first, flashy automation second.
   </p>
-  <p class="cta-panel__actions">
-    <a class="btn btn--primary" href="https://github.com/mta-babel/Babel-Player/releases/latest">Download latest release</a>
-    <a class="btn btn--ghost" href="https://github.com/mta-babel/Babel-Player">Repository</a>
+
+  <div class="feature-grid feature-grid--three">
+    <article class="feature-card">
+      <h3 class="feature-card__title">Core direction</h3>
+      <p>Desktop-first dubbing pipeline with local workflow, staged AI processing, preview, and refinement.</p>
+    </article>
+    <article class="feature-card">
+      <h3 class="feature-card__title">Important caveat</h3>
+      <p>Model and voice licenses vary. Commercial use depends on the specific providers, binaries, and model weights you configure.</p>
+    </article>
+    <article class="feature-card">
+      <h3 class="feature-card__title">Want to help?</h3>
+      <p>Test clean installs, report runtime failures, improve docs, contribute UI polish, or sponsor development.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-block section-block--compact" id="requirements">
+  <p class="section-kicker">Requirements</p>
+  <div class="requirements-table-wrap">
+    <table class="requirements-table">
+      <tbody>
+        <tr>
+          <th>OS</th>
+          <td>Windows 10 or 11</td>
+        </tr>
+        <tr>
+          <th>Architecture</th>
+          <td>x64 and ARM64</td>
+        </tr>
+        <tr>
+          <th>GPU</th>
+          <td>Optional, but NVIDIA CUDA is recommended for heavier local paths</td>
+        </tr>
+        <tr>
+          <th>Release builds</th>
+          <td>Self-contained, no separate .NET runtime install</td>
+        </tr>
+        <tr>
+          <th>Source builds</th>
+          <td>.NET 10 SDK</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section-block section-block--compact" id="privacy">
+  <p class="section-kicker">Privacy and licensing</p>
+  <p class="section-lead">
+    Processing stays on your machine unless you deliberately route a stage through a cloud provider and supply your own key. There are no mandatory accounts for using the app itself.
+  </p>
+  <ul class="link-list">
+    <li><a href="{{ site.baseurl }}/privacy/">Privacy policy</a></li>
+    <li><a href="https://github.com/mta-babel/Babel-Player#readme">Repository README</a></li>
+    <li><a href="https://github.com/mta-babel/Babel-Player/blob/main/THIRD_PARTY_LICENSES.md">Third-party licenses</a></li>
+  </ul>
+</section>
+
+<section class="cta-band" id="download">
+  <p class="section-kicker">Get started</p>
+  <h2>Try it, inspect it, improve it.</h2>
+  <p class="section-lead">
+    Grab a release if one is available, or build from source. For now, treat Babel Player as a serious alpha rather than a finished commercial dubbing suite.
+  </p>
+
+  <div class="cta-code">git clone https://github.com/mta-babel/Babel-Player.git</div>
+
+  <div class="cta-panel__actions">
+    <a class="btn btn--primary" href="https://github.com/mta-babel/Babel-Player/releases/latest">Releases</a>
     <a class="btn btn--ghost" href="https://github.com/mta-babel/Babel-Player/issues">Issues</a>
-  </p>
-</div>
-
-<h3>Support development</h3>
-
-<ul>
-  <li><a href="https://github.com/sponsors/mta-babel">GitHub Sponsors</a></li>
-  <li><a href="https://ko-fi.com/babel_player">Ko-fi</a></li>
-</ul>
+    <a class="btn btn--ghost" href="https://github.com/mta-babel/Babel-Player#readme">README</a>
+  </div>
+</section>
