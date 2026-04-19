@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: 'en-US' }}">
   <head>
     <meta charset="UTF-8">
 
-{% seo %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0a1628">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
   </head>
   <body class="{{ page.body_class | default: '' }}">
-    <a id="skip-to-content" class="skip-link" href="#content">Skip to the content</a>
+    <a id="skip-to-content" class="skip-link" href="#content">Skip to content</a>
+
+    {% assign repo_url = 'https://github.com/' | append: site.repository %}
+    {% assign releases_url = repo_url | append: '/releases/latest' %}
+    {% assign issues_url = repo_url | append: '/issues' %}
 
     <header class="page-header" role="banner">
       <div class="page-header__inner">
-        <p class="page-header__eyebrow">Local-first · Windows · .NET&nbsp;10 + Avalonia&nbsp;12</p>
+        <p class="page-header__eyebrow">Local-first AI dubbing for Windows</p>
         <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-        <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+        <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+
         <div class="page-header__actions">
-          <a href="https://github.com/Babelworks/Babel-Player/releases/latest" class="btn btn--primary">Download latest release</a>
-          {% if site.github.is_project_page %}
-            <a href="{{ site.github.repository_url }}" class="btn btn--ghost">View on GitHub</a>
-          {% endif %}
+          <a href="{{ releases_url }}" class="btn btn--primary">Download latest release</a>
+          <a href="{{ repo_url }}" class="btn btn--ghost">View source</a>
           {% for link in site.nav_links %}
             <a href="{{ link.url }}" class="btn btn--ghost">{{ link.title }}</a>
           {% endfor %}
@@ -37,21 +40,27 @@
 
       <footer class="site-footer">
         <div class="site-footer__grid">
-          {% if site.github.is_project_page %}
-            <p class="site-footer__owner">
-              <a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>
-              is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.
-            </p>
-          {% endif %}
+          <p class="site-footer__owner">
+            <a href="{{ repo_url }}">{{ site.title }}</a>
+            is an open-source desktop dubbing workstation in active development.
+          </p>
+
           <p class="site-footer__links">
-            <a href="https://github.com/Babelworks/Babel-Player/releases/latest">Releases</a>
+            <a href="{{ releases_url }}">Releases</a>
+            <span class="site-footer__dot" aria-hidden="true">·</span>
+            <a href="{{ issues_url }}">Issues</a>
+            <span class="site-footer__dot" aria-hidden="true">·</span>
+            <a href="https://github.com/sponsors/mta-babel">GitHub Sponsors</a>
             <span class="site-footer__dot" aria-hidden="true">·</span>
             <a href="https://ko-fi.com/babel_player">Ko-fi</a>
             <span class="site-footer__dot" aria-hidden="true">·</span>
             <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
           </p>
         </div>
-        <p class="site-footer__credits">Hosted on <a href="https://pages.github.com">GitHub Pages</a>.</p>
+
+        <p class="site-footer__credits">
+          Hosted on <a href="https://pages.github.com">GitHub Pages</a>.
+        </p>
       </footer>
     </main>
   </body>
