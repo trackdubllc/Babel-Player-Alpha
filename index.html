@@ -28,27 +28,15 @@ body_class: bp-home
   </div>
 
   <div class="hero-visual">
-    <div class="hero-mock">
-      <div class="hero-mock__chrome">
-        <span></span><span></span><span></span>
-      </div>
-
-      <div class="hero-mock__player">
-        <div class="hero-mock__play"></div>
-      </div>
-
-      <div class="hero-mock__wave"></div>
-
-      <div class="hero-mock__card hero-mock__card--active">
-        <strong>Speaker 1</strong>
-        <span>Original transcript → translated line → generated voice</span>
-      </div>
-
-      <div class="hero-mock__card">
-        <strong>Speaker 2</strong>
-        <span>Regenerate only changed stages</span>
-      </div>
-    </div>
+    <figure class="hero-shot hero-shot--hero">
+      <img
+        src="https://raw.githubusercontent.com/mta-babel/Babel-Player/main/Assets/preview.png"
+        alt="Babel Player main window showing transcript, dubbing workflow, and preview"
+        width="1152"
+        height="648"
+        loading="eager"
+        decoding="async">
+    </figure>
   </div>
 </section>
 
@@ -59,7 +47,7 @@ body_class: bp-home
   </div>
   <div class="trust-pill">
     <strong>Inspectable stages</strong>
-    <span>Transcript, translation, voices, and TTS stay visible and editable.</span>
+    <span>Transcript, translation, voices, and TTS stay editable.</span>
   </div>
   <div class="trust-pill">
     <strong>Hardware-aware</strong>
@@ -98,7 +86,7 @@ body_class: bp-home
     <li class="workflow-card">
       <span class="workflow-card__num">05</span>
       <h3>Generate TTS</h3>
-      <p>Render dubbed speech per segment so individual fixes do not require a full rerun.</p>
+      <p>Render dubbed speech per segment so targeted fixes can stay focused instead of forcing a from-scratch workflow.</p>
     </li>
     <li class="workflow-card">
       <span class="workflow-card__num">06</span>
@@ -106,6 +94,46 @@ body_class: bp-home
       <p>Hear dubbed speech against the original video, then adjust text, timing, voice, or mix.</p>
     </li>
   </ol>
+</section>
+
+<section class="section-block" id="screens">
+  <p class="section-kicker">Interface gallery</p>
+  <h2>Real screens from the current build.</h2>
+  <p class="section-lead">
+    The app is not a black-box web demo. These screens show the actual staged workflow, provider selection, and speaker tooling in the desktop client.
+  </p>
+
+  <div class="gallery-grid">
+    <figure class="hero-shot">
+      <img
+        src="https://raw.githubusercontent.com/mta-babel/Babel-Player/main/Assets/Pipeline%201.png"
+        alt="Babel Player pipeline view showing ingest, transcription, vocal separation, and diarization"
+        width="1152"
+        loading="lazy"
+        decoding="async">
+      <figcaption>Early pipeline stages: ingest, transcription, separation, and diarization.</figcaption>
+    </figure>
+
+    <figure class="hero-shot">
+      <img
+        src="https://raw.githubusercontent.com/mta-babel/Babel-Player/main/Assets/Pipeline%202.png"
+        alt="Babel Player pipeline view showing translation, text-to-speech, and downstream stages"
+        width="1152"
+        loading="lazy"
+        decoding="async">
+      <figcaption>Translation and speech generation stay gated behind real upstream artifacts, not fake ready states.</figcaption>
+    </figure>
+  </div>
+
+  <figure class="hero-shot hero-shot--secondary">
+    <img
+      src="https://raw.githubusercontent.com/mta-babel/Babel-Player/main/Assets/wizard.png"
+      alt="Babel Player speaker reference wizard for multi-speaker routing and assignment"
+      width="1152"
+      loading="lazy"
+      decoding="async">
+    <figcaption>Speaker-aware workflow for consistent routing, assignment, and future refinement.</figcaption>
+  </figure>
 </section>
 
 <section class="section-block section-block--split" id="why">
