@@ -68,23 +68,17 @@ body {
 .site-topbar__brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.7rem;
   color: #fff;
   text-decoration: none;
   font-weight: 750;
 }
-.site-topbar__brand::before {
-  content: "BP";
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.7rem;
-  height: 1.7rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--bp-accent), var(--bp-accent-2));
-  color: #06111b;
-  font-size: 0.7rem;
-  font-weight: 900;
+.site-topbar__logo {
+  width: 1.9rem;
+  height: 1.9rem;
+  object-fit: contain;
+  display: block;
+  flex: 0 0 auto;
 }
 
 .site-topbar__nav {
@@ -348,14 +342,15 @@ body {
 }
 
 .gallery-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  justify-content: center;
   margin-top: 1.5rem;
 }
 .gallery-card {
   margin: 0;
 }
 .gallery-card img {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   object-position: top center;
   background: #0a0f18;
@@ -514,6 +509,14 @@ body {
     margin-left: 0;
     margin-right: 0;
   }
+
+  .gallery-card {
+    max-width: 420px;
+  }
+
+  .gallery-card img {
+    aspect-ratio: 2 / 3;
+  }
 }
 
 @media (max-width: 720px) {
@@ -533,9 +536,5 @@ body {
 
   .hero-grid {
     padding-top: 1rem;
-  }
-
-  .gallery-card img {
-    aspect-ratio: 16 / 11;
   }
 }

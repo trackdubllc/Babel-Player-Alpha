@@ -12,11 +12,13 @@
     <a id="skip-to-content" class="skip-link" href="#content">Skip to content</a>
 
     {% assign repo_url = 'https://github.com/' | append: site.repository %}
-    {% assign releases_url = repo_url | append: '/releases/latest' %}
 
     <header class="site-topbar" role="banner">
       <div class="site-topbar__inner">
-        <a class="site-topbar__brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+        <a class="site-topbar__brand" href="{{ site.baseurl }}/">
+          <img class="site-topbar__logo" src="{{ '/Assets/logo x256.png' | relative_url }}" alt="{{ site.title }} logo">
+          <span>{{ site.title }}</span>
+        </a>
         <nav class="site-topbar__nav" aria-label="Primary">
           <a href="#workflow">Workflow</a>
           <a href="#why">Features</a>
