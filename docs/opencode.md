@@ -12,7 +12,7 @@ This repository uses [opencode-review-threads](https://github.com/tonythethompso
 ## Gates
 
 - **Review:** same-repository PRs only (fork PRs receive no secrets), non-draft, author association `OWNER`/`MEMBER`/`COLLABORATOR`/`CONTRIBUTOR`, and neither the PR author nor the triggering actor may be a bot. A `model` input is an explicit opt-in bypass of the association check.
-- **Bot:** commenters must have `OWNER`/`MEMBER`/`COLLABORATOR`/`CONTRIBUTOR` association.
+- **Bot:** commenters must have `OWNER`/`MEMBER`/`COLLABORATOR`/`CONTRIBUTOR` association, and the triggering actor must not be a bot (bot-triggered runs cannot mint the OIDC/secrets the reusable call needs and fail at startup).
 
 ## Incremental reviews
 
