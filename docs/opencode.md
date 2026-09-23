@@ -1,13 +1,13 @@
 # OpenCode workflows
 
-This repository uses [opencode-review-threads](https://github.com/tonythethompson/opencode-review-threads) through two reusable workflows pinned to `v1.3.2`.
+This repository uses [opencode-review-threads](https://github.com/tonythethompson/opencode-review-threads) through two reusable workflows pinned to `v1.4.0`.
 
 ## Workflows
 
 | File | Trigger | Purpose |
 |---|---|---|
 | `.github/workflows/opencode-review.yml` | `pull_request` (opened, reopened, synchronize, ready_for_review) | Posts one structured GitHub review per run: a short summary body plus inline, individually resolvable review threads, authored by `opencode-agent[bot]` |
-| `.github/workflows/opencode.yml` | PR conversation or review comments containing `/oc` / `/opencode`; `workflow_dispatch` with `prompt` | On-demand OpenCode agent. `/oc fix ...` prompts can edit code and push commits to the PR branch |
+| `.github/workflows/opencode.yml` | PR conversation or review comments containing `/oc` / `/opencode`; `workflow_dispatch` with `prompt` | On-demand OpenCode agent. `/oc fix ...` prompts can edit code and push commits to the PR branch; `/oc autopilot` runs a merge-readiness pass (conflicts, unresolved threads, failing CI) |
 
 ## Gates
 
@@ -24,6 +24,7 @@ After a submitted review, subsequent pushes diff only commits since that review,
 |---|---|
 | `OPENCODE_API_KEY` | Zen provider (`zen:` chain entries) |
 | `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` | Cloudflare Workers AI (`cf:` chain entries) |
+| `CONTEXT7_API_KEY` | Optional. Enables the bundled context7 MCP server so fix/autopilot runs can consult current third-party library docs before editing |
 
 Each job probes `models-review` / `models-fix` in order; the first reachable model wins. Missing providers are skipped cleanly, but at least one must work.
 
