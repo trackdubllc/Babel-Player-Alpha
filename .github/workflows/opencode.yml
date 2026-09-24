@@ -21,7 +21,7 @@ jobs:
     if: >-
       !endsWith(github.actor, '[bot]')
       && (github.event_name == 'workflow_dispatch'
-          || contains('OWNER,MEMBER,COLLABORATOR,CONTRIBUTOR', github.event.comment.author_association))
+          || contains(fromJSON('["OWNER","MEMBER","COLLABORATOR","CONTRIBUTOR"]'), github.event.comment.author_association))
     permissions:
       contents: read
       issues: write
