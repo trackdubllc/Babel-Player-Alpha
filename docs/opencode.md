@@ -1,6 +1,6 @@
 # OpenCode workflows
 
-This repository uses [opencode-review-threads](https://github.com/tonythethompson/opencode-review-threads) through two reusable workflows pinned to `v1.4.0`.
+This repository uses [opencode-review-threads](https://github.com/tonythethompson/opencode-review-threads) through two reusable workflows pinned to `v1.4.1`.
 
 ## Workflows
 
@@ -30,4 +30,4 @@ Each job probes `models-review` / `models-fix` in order; the first reachable mod
 
 ## Requirement
 
-The OpenCode GitHub App must be installed on this repository for the `opencode-agent[bot]` token exchange. If it is not installed, set `use-github-token: true` on both caller jobs; reviews and replies then post as `github-actions[bot]` instead.
+The OpenCode GitHub App must be installed on this repository for the `opencode-agent[bot]` token exchange. If it is not installed, set `use-github-token: true` on both caller jobs; reviews and replies then post as `github-actions[bot]` instead; in that mode the bot caller also needs `contents: write` for `/oc fix` pushes.
